@@ -1,6 +1,9 @@
 package com.java.network;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
 import java.net.*;
 
 public class SocketServer {
@@ -9,11 +12,21 @@ public class SocketServer {
 		ServerSocket ss = new ServerSocket(3000);
 		System.out.println("Server is waiting for the client connection..");
 		Socket socket = ss.accept();
-		DataInputStream data = new DataInputStream(socket.getInputStream());
-		String str = data.readUTF();
-		System.out.println("Port Number: "+ ss.getLocalPort());
-		System.out.println("User Message: "+ str);
-		System.out.println("Buffer size: " + ss.getReceiveBufferSize());
+		DataInputStream input = new DataInputStream(socket.getInputStream());
+		DataOutputStream output = new DataOutputStream(socket.getOutputStream());
+		BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+		
+		String out = "", in = "";
+		while(!out.equals("stop")) {
+			out = input.readUTF();
+			System.out.println("Client: " + out);
+			in = buf.readLine();
+			output.writeUTF("Hello venkat.");
+			output.flush();
+		}
+		
+		input.close();
+		socket.close();
 		ss.close();
 	}
 	
