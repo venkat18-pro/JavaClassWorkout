@@ -4,6 +4,13 @@ package com.java.allclass;
 
 public class EnumClass {
 
+	static class Hi{
+		private void hello() {
+			System.out.println("From Hi class.");
+
+		}
+	}
+	
 	public enum Days{
 		SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY;
 	}
@@ -16,6 +23,8 @@ public class EnumClass {
 		
 		System.out.println("ValuesOf method: " + Days.valueOf("SUNDAY"));
 		System.out.println("Valuesof method: " + Days.valueOf("MONDAY").ordinal());
+		EnumClass.Hi h = new EnumClass.Hi();
+		h.hello();
 	}
 	
 }
