@@ -14,6 +14,17 @@ public class Anonymous {
 			}
 		};
 		in.hello();
+		
+		Thread th = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("Child Thread..");
+			}
+		});
+		
+		th.start();
+		
+		System.out.println("Main Thread.");
 	}
 
 }
