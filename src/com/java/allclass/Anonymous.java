@@ -10,7 +10,7 @@ public class Anonymous {
 		Inter in = new Inter() {
 			@Override
 			public void hello() {
-				System.out.println("Hello World..");
+				System.out.println("Hello World.");
 			}
 		};
 		in.hello();
