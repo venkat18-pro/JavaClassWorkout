@@ -13,6 +13,7 @@ public class Anonymous {
 				System.out.println("Hello World.");
 			}
 		};
+		
 		in.hello();
 		
 		Thread th = new Thread(new Runnable() {
