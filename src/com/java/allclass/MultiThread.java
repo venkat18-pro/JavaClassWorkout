@@ -12,13 +12,13 @@ public class MultiThread {
 	public void add() {
 		int a =10,b=20,c;
 		c=a+b;
-		System.out.println("Add"+c);
+		System.out.println("Add: "+c);
 	}
 	
 	public void sub() {
 		int a =30,b=20,c;
 		c=a-b;
-		System.out.println("Sub"+c);
+		System.out.println("Sub: "+c);
 	}
 	
 	public static void main(String[] args) throws Throwable {
