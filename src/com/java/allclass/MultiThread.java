@@ -13,6 +13,7 @@ public class MultiThread {
 		c=a-b;
 		System.out.println("Sub"+c);
 	}
+	
 	public static void main(String[] args) throws Throwable {
 		
 		MultiThread mt = new MultiThread();
@@ -33,11 +34,12 @@ public class MultiThread {
 			}	
 		});
 		
-		
 		th.start();
 		System.out.println("Thread ID: "+th.getId());
+		System.out.println("Thread Name: "+th.getName());
 		th1.start();
 		System.out.println("Thread 1 ID: "+th1.getId());
+		System.out.println("Thread 1 Name: "+th1.getName());
 		System.out.println("Hello");
 	}
 
