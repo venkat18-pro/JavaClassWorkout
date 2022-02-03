@@ -2,6 +2,13 @@ package com.java.allclass;
 
 public class MultiThread {
 
+	static {
+		System.out.println("Hello i am from Static..");
+	}
+	
+	static {
+		System.out.println("Hi.");
+	}
 	public void add() {
 		int a =10,b=20,c;
 		c=a+b;
@@ -42,5 +49,8 @@ public class MultiThread {
 		System.out.println("Thread 1 Name: "+th1.getName());
 		System.out.println("Hello");
 	}
-
+static {
+	for(int i=0;i<=5;i++)
+	System.out.println("How are you");
+}
 }
