@@ -111,7 +111,20 @@ public class MultiThread {
 		
 		threadName();
 		
+		MultiThread mul = new MultiThread();
+		
+		MultiThread mul1 = mul;
+		
+		System.out.println(mul.hashCode());
+		System.out.println(mul1.hashCode());
+		
+		System.gc();
+		System.out.println("End of the garbage collection.");
 		
 	}
-
+	@Override
+	public void finalize() {
+		System.out.println("finalize method is calling..");
+	}
+	
 }
