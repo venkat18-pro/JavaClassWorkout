@@ -21,6 +21,14 @@ public class MultiThread {
 		System.out.println("Sub: "+c);
 	}
 	
+	
+	public void syn(int num) throws Throwable  {
+		for(int i=1; i<=10;i++) {
+			System.out.println(i + " * "+ num + " = "+ i*num);
+			Thread.sleep(1000);
+		}
+	}
+	
 	public static void main(String[] args) throws Throwable {
 		
 		MultiThread mt = new MultiThread();
@@ -29,7 +37,12 @@ public class MultiThread {
 			@Override
 			public void run() {
 				System.out.println("Thread 1.");
-				mt.add();
+				try {
+					mt.syn(10);
+				} catch (Throwable e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
@@ -37,20 +50,22 @@ public class MultiThread {
 			@Override
 			public void run() {
 				System.out.println("Thread 2.");
-				mt.sub();
+				try {
+					mt.syn(2);
+				} catch (Throwable e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}	
 		});
 		
 		th.start();
-		System.out.println("Thread ID: "+th.getId());
-		System.out.println("Thread Name: "+th.getName());
+//		System.out.println("Thread ID: "+th.getId());
+//		System.out.println("Thread Name: "+th.getName());
 		th1.start();
-		System.out.println("Thread 1 ID: "+th1.getId());
-		System.out.println("Thread 1 Name: "+th1.getName());
-		System.out.println("Hello");
+//		System.out.println("Thread 1 ID: "+th1.getId());
+//		System.out.println("Thread 1 Name: "+th1.getName());
+//		System.out.println("Hello");
 	}
-static {
-	for(int i=0;i<=5;i++)
-	System.out.println("How are you");
-}
+
 }
