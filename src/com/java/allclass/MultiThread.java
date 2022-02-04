@@ -22,7 +22,7 @@ public class MultiThread {
 	}
 	
 	
-	public void syn(int num) throws Throwable  {
+	public synchronized void syn(int num) throws Throwable  {
 		for(int i=1; i<=10;i++) {
 			System.out.println(i + " * "+ num + " = "+ i*num);
 			Thread.sleep(1000);
