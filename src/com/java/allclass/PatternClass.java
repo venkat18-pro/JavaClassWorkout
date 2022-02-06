@@ -7,6 +7,19 @@ public class PatternClass {
 		Pattern p = Pattern.compile("a*b*cc");
 		Matcher m = p.matcher("aaaaabbbcc");
 		System.out.println("Boolean : " + m.matches());
+		
+		System.out.println("Another way : " + Pattern.matches("ab", "ab"));
+		
+		Pattern p1 = Pattern.compile("venkat");
+		
+		Matcher m1 = p1.matcher("venkatforvenkat");
+		
+		while(m1.find()) {
+			
+			System.out.println("Pattern found from "+m1.start()+" to "+(m1.end()-1));
+			
+		}
+		
 	}
 
 }
