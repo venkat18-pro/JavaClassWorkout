@@ -20,6 +20,10 @@ public class PatternClass {
 			
 		}
 		
+		Pattern p2 = Pattern.compile("[a-i&&[aeiou]]");
+		Matcher m2 = p2.matcher("e");
+		System.out.println(m2.matches());
+		
 	}
 
 }
